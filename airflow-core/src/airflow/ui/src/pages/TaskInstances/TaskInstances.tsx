@@ -253,8 +253,7 @@ export const TaskInstances = () => {
   const filteredDagIdPattern = searchParams.get(DAG_ID_PATTERN_PARAM);
   const filteredRunId = searchParams.get(RUN_ID_PARAM);
   const hasFilteredState = filteredState.length > 0;
-  const taskDisplayNamePattern= searchParams.get(NAME_PATTERN_PARAM);
-
+  const taskDisplayNamePattern = searchParams.get(NAME_PATTERN_PARAM);
 
   const refetchInterval = useAutoRefresh({});
 
@@ -273,8 +272,8 @@ export const TaskInstances = () => {
       offset: pagination.pageIndex * pagination.pageSize,
       operatorNamePattern: operatorNamePattern ?? undefined,
       orderBy,
-      poolNamePattern:  poolNamePattern ?? undefined,
-      queueNamePattern:  queueNamePattern ?? undefined,
+      poolNamePattern: poolNamePattern ?? undefined,
+      queueNamePattern: queueNamePattern ?? undefined,
       startDateGte: startDate ?? undefined,
       state: hasFilteredState ? filteredState : undefined,
       taskDisplayNamePattern: groupId ?? taskDisplayNamePattern ?? undefined,
@@ -292,7 +291,7 @@ export const TaskInstances = () => {
 
   return (
     <>
-      <TaskInstancesFilter/>
+      <TaskInstancesFilter />
       <DataTable
         columns={taskInstanceColumns({
           dagId,
